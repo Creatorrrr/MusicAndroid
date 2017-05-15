@@ -3,6 +3,7 @@ package com.example.kosta.musicandroid;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.ImageView;
 
 import java.io.BufferedInputStream;
@@ -21,7 +22,7 @@ public class ImageLoadingTask extends AsyncTask<String, Void, Bitmap> {
     private WeakReference<ImageView> imageViewReference;
 
     public ImageLoadingTask(ImageView imageView) {
-        imageViewReference = new WeakReference<ImageView>(imageView);
+        imageViewReference = new WeakReference<>(imageView);
     }
 
     @Override
@@ -37,6 +38,10 @@ public class ImageLoadingTask extends AsyncTask<String, Void, Bitmap> {
 
     @Override
     protected void onPostExecute(Bitmap bitmap) {
+        if(isCancelled()) {
+            bitmap = null;
+        }
+
         ImageView imageView = imageViewReference.get();
         if(imageView != null) {
             imageView.setImageBitmap(bitmap);

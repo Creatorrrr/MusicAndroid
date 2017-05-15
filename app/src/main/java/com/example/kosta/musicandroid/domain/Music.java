@@ -1,10 +1,12 @@
 package com.example.kosta.musicandroid.domain;
 
+import java.io.Serializable;
+
 /**
  * Created by kosta on 2017-05-10.
  */
 
-public class Music {
+public class Music implements Serializable {
     private int id;
     private String name;
     private String artist;

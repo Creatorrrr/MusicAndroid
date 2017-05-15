@@ -8,23 +8,37 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="right"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/allBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="ALL MUSICS"/>
+        <!--<Button-->
+            <!--android:id="@+id/allBtn"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="ALL MUSICS"/>-->
 
-        <Button
-            android:id="@+id/myBtn"
+        <!--<Button-->
+            <!--android:id="@+id/myBtn"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="MY MUSICS"/>-->
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="MY MUSICS"/>
+            android:textSize="15sp"
+            android:text="List Change"/>
+
+        <ToggleButton
+            android:id="@+id/listToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="All List"
+            android:textOn="My List"/>
 
     </LinearLayout>
 
